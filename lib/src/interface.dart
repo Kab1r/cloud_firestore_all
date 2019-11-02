@@ -1,45 +1,18 @@
-abstract class Firestore {
-  static Firestore get instance {
-    return null;
-  }
+library cloud_firestore_interfaces;
 
-  CollectionReference collection(String path);
-}
+import 'interfaces/firebase_app.dart';
+import 'interfaces/firestore.dart';
+import 'interfaces/field_value.dart';
 
-abstract class CollectionReference {
-  Stream<QuerySnapshot> get onSnapshot;
-  String get path;
-  String get id;
+export 'interfaces/field_value.dart';
+export 'interfaces/firebase_app.dart';
+export 'interfaces/firestore.dart';
+export 'interfaces/collection.dart';
+export 'interfaces/document.dart';
+export 'interfaces/query.dart';
 
-  DocumentReference doc([String path]);
-}
+FirebaseApp get appInstance => throw Exception('Unsupported Platform');
+Firestore get firestoreInstance => throw Exception('Unsupported Platform');
+Future<List<FirebaseApp>> get apps => throw Exception('Unsupported Platform');
 
-abstract class QuerySnapshot {
-  List<DocumentSnapshot> get docs;
-}
-
-abstract class DocumentSnapshot {
-  DocumentReference get ref;
-  String get id;
-  Map<String, dynamic> get data;
-}
-
-abstract class DocumentReference {
-  String get id;
-  Stream<DocumentSnapshot> get onSnapshot;
-  CollectionReference get parent;
-  String get path;
-
-  Future<void> delete();
-  Future<DocumentSnapshot> get();
-  Future<void> set(Map<String, dynamic> data);
-  Future<void> update({Map<String, dynamic> data});
-}
-
-void initializeApp(
-        [String apiKey,
-        String authDomain,
-        String databaseURL,
-        String projectId,
-        String storageBucket]) =>
-    throw Exception('Unsupported Platform');
+FieldValue serverTimestamp() => throw Exception('Unsupported Platform');
