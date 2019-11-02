@@ -20,4 +20,5 @@ Future<List<FirebaseApp>> get apps =>
     mobile.FirebaseApp.allApps().then((List<mobile.FirebaseApp> list) =>
         list.map((mobile.FirebaseApp app) => FirebaseApp(app)).toList());
 
-FieldValue serverTimestamp() => FieldValue(mobile_fs.FieldValue.serverTimestamp());
+FieldValue serverTimestamp() =>
+    FieldValue(mobile_fs.FieldValue.serverTimestamp());

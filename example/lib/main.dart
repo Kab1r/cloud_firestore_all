@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MessageList extends StatelessWidget {
   MessageList({this.firestore});
 
@@ -45,12 +46,11 @@ class MessageList extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatelessWidget {
   final Firestore firestore = firestoreInstance;
   CollectionReference get messages => firestore.collection('messages');
 
-    Future<void> _addMessage() async {
+  Future<void> _addMessage() async {
     await messages.add(<String, dynamic>{
       'message': 'Hello world!',
       'created_at': serverTimestamp(),
