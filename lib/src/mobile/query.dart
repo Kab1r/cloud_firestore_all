@@ -45,6 +45,26 @@ class Query implements intf.Query {
   @override
   Query startAt(List values, {intf.DocumentSnapshot snapshot}) =>
       Query(_query.startAt(values));
+
+  @override
+  intf.Query where(field,
+          {isEqualTo,
+          isLessThan,
+          isLessThanOrEqualTo,
+          isGreaterThan,
+          isGreaterThanOrEqualTo,
+          arrayContains,
+          List arrayContainsAny,
+          List whereIn,
+          bool isNull}) =>
+      Query(_query.where(field,
+          isEqualTo: isEqualTo,
+          isLessThan: isLessThan,
+          isLessThanOrEqualTo: isLessThanOrEqualTo,
+          isGreaterThan: isGreaterThan,
+          isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+          arrayContains: arrayContains,
+          isNull: isNull));
 }
 
 class QuerySnapshot implements intf.QuerySnapshot {
@@ -53,5 +73,5 @@ class QuerySnapshot implements intf.QuerySnapshot {
 
   @override
   List<DocumentSnapshot> get docs => _querySnapshot.documents
-      .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap));
+      .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap)).toList();
 }
