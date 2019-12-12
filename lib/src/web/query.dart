@@ -51,6 +51,61 @@ class Query implements intf.Query {
       Query(_query.startAt(
           snapshot: (snapshot as DocumentSnapshot).documentSnapshot,
           fieldValues: values));
+
+  @override
+  intf.Query where(field,
+      {isEqualTo,
+      isLessThan,
+      isLessThanOrEqualTo,
+      isGreaterThan,
+      isGreaterThanOrEqualTo,
+      arrayContains,
+      List arrayContainsAny,
+      List whereIn,
+      bool isNull}) {
+    /// https://firebase.google.com/docs/reference/js/firebase.firestore.html#wherefilterop
+    String op;
+    dynamic value;
+
+    if (isEqualTo != null) {
+      op = '==';
+      value = isEqualTo;
+    }
+    if (isLessThan != null) {
+      op = '<';
+      value = isLessThan;
+    }
+    if (isLessThanOrEqualTo != null) {
+      op = '<=';
+      value = isLessThanOrEqualTo;
+    }
+    if (isGreaterThan != null) {
+      op = '>';
+      value = isGreaterThan;
+    }
+    if (isGreaterThanOrEqualTo != null) {
+      op = '>=';
+      value = isGreaterThanOrEqualTo;
+    }
+    if (arrayContains != null) {
+      op = 'array-contains';
+      value = arrayContains;
+    }
+    if (arrayContainsAny != null) {
+      op = 'array-contains-any';
+      value = arrayContainsAny;
+    }
+    if (whereIn != null) {
+      op = 'in';
+      value = whereIn;
+    }
+    if (isNull) {
+      op = '==';
+      value = null;
+    }
+
+    return Query(_query.where(field, op, value));
+  }
 }
 
 class QuerySnapshot implements intf.QuerySnapshot {

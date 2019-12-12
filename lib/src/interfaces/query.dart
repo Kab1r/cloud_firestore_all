@@ -14,6 +14,18 @@ abstract class Query {
   Stream<QuerySnapshot> get onSnapshot;
   Query startAfter(List values, {DocumentSnapshot snapshot});
   Query startAt(List values, {DocumentSnapshot snapshot});
+  Query where(
+    dynamic field, {
+    dynamic isEqualTo,
+    dynamic isLessThan,
+    dynamic isLessThanOrEqualTo,
+    dynamic isGreaterThan,
+    dynamic isGreaterThanOrEqualTo,
+    dynamic arrayContains,
+    List<dynamic> arrayContainsAny,
+    List<dynamic> whereIn,
+    bool isNull,
+  });
 }
 
 abstract class QuerySnapshot {
