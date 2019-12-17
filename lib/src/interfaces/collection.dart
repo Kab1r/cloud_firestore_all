@@ -5,7 +5,6 @@ import 'query.dart';
 /// document references, and querying for documents (using the methods
 /// inherited from [Query]).
 abstract class CollectionReference extends Query {
-  
   /// ID of the referenced collection.
   String get id;
 

@@ -6,7 +6,6 @@ import 'collection.dart';
 /// The data can be extracted with the data property or by using subscript
 /// syntax to access a specific field.
 abstract class DocumentSnapshot {
-
   /// The reference that produced this snapshot
   DocumentReference get ref;
 
@@ -27,16 +26,15 @@ abstract class DocumentSnapshot {
 /// A [DocumentReference] can also be used to create a [CollectionReference]
 /// to a subcollection.
 abstract class DocumentReference {
-
   /// This document's given or generated ID in the collection.
   String get id;
-  
+
   /// Notifies of documents at this location
   Stream<DocumentSnapshot> get onSnapshot;
-  
+
   /// Parent returns the containing [CollectionReference].
   CollectionReference get parent;
-  
+
   /// Slash-delimited path representing the database location of this query.
   String get path;
 

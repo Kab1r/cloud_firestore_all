@@ -5,11 +5,9 @@ import 'firestore.dart';
 /// You can also construct refined [Query] objects by adding filters
 /// and ordering.
 abstract class Query {
-  
   /// The [Firestore] instance associated with this query
   Firestore get firestore;
 
-  
   /// Creates a new [Query] where the results end at the provided document
   /// (inclusive). The end position is relative to the order of the query.
   /// The document must contain all of the fields provided in the orderBy
@@ -59,7 +57,6 @@ abstract class Query {
   /// Returns non-null created [Query].
   Query orderBy(dynamic fieldPath, {bool descending: false});
 
-  
   /// Attaches a listener for [QuerySnapshot] events.
   Stream<QuerySnapshot> get onSnapshot;
 
@@ -117,7 +114,6 @@ abstract class Query {
 /// an array via the docs property or enumerated using the [forEach()] method.
 /// The number of documents can be determined via the [empty] and [size] properties.
 abstract class QuerySnapshot {
-  
   /// Non-null list of all the documents.
   List<DocumentSnapshot> get docs;
 }

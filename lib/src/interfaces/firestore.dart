@@ -4,8 +4,6 @@ import 'firebase_app.dart';
 
 /// The entry point for accessing a Firestore.
 abstract class Firestore {
-
-  
   /// The [FirebaseApp] instance to which this [FirebaseDatabase] belongs.
   ///
   /// If null, the default [FirebaseApp] is used.

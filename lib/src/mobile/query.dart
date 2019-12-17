@@ -73,5 +73,6 @@ class QuerySnapshot implements intf.QuerySnapshot {
 
   @override
   List<DocumentSnapshot> get docs => _querySnapshot.documents
-      .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap)).toList();
+      .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap))
+      .toList();
 }
