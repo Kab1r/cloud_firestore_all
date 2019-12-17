@@ -11,8 +11,14 @@ export 'interfaces/collection.dart';
 export 'interfaces/document.dart';
 export 'interfaces/query.dart';
 
+/// Returns the default (first initialized) instance of the FirebaseApp.
 FirebaseApp get appInstance => throw Exception('Unsupported Platform');
+
+/// Returns the instance of Firestore for the default Firebase app.
 Firestore get firestoreInstance => throw Exception('Unsupported Platform');
+
+/// Returns a list of all extant FirebaseApp instances, or null if there are no FirebaseApp instances.
 Future<List<FirebaseApp>> get apps => throw Exception('Unsupported Platform');
 
+/// Returns a sentinel for use with set() or update() to include a server-generated timestamp in the written data.
 FieldValue serverTimestamp() => throw Exception('Unsupported Platform');
