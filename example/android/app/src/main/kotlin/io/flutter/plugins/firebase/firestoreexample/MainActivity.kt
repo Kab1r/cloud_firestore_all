@@ -1,4 +1,4 @@
-package com.example.example
+package io.flutter.plugins.firebase.firestoreexample
 
 import android.os.Bundle
 import io.flutter.app.FlutterActivity
