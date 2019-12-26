@@ -2,13 +2,12 @@ library cloud_firestore_interfaces;
 
 import 'interfaces/firebase_app.dart';
 import 'interfaces/firestore.dart';
-import 'interfaces/field_value.dart';
 
+export 'interfaces/collection.dart';
+export 'interfaces/document.dart';
 export 'interfaces/field_value.dart';
 export 'interfaces/firebase_app.dart';
 export 'interfaces/firestore.dart';
-export 'interfaces/collection.dart';
-export 'interfaces/document.dart';
 export 'interfaces/query.dart';
 
 /// Returns the default (first initialized) instance of the FirebaseApp.
@@ -21,4 +20,4 @@ Firestore get firestoreInstance => throw Exception('Unsupported Platform');
 Future<List<FirebaseApp>> get apps => throw Exception('Unsupported Platform');
 
 /// Returns a sentinel for use with set() or update() to include a server-generated timestamp in the written data.
-FieldValue serverTimestamp() => throw Exception('Unsupported Platform');
+dynamic serverTimestamp() => throw Exception('Unsupported Platform');
