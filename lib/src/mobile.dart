@@ -8,6 +8,7 @@ import 'mobile/firestore.dart';
 
 export 'mobile/collection.dart';
 export 'mobile/document.dart';
+export 'mobile/field_value.dart';
 export 'mobile/firebase_app.dart';
 export 'mobile/firestore.dart';
 export 'mobile/query.dart';
@@ -18,6 +19,3 @@ Firestore get firestoreInstance => Firestore(mobile_fs.Firestore.instance);
 Future<List<FirebaseApp>> get apps =>
     mobile.FirebaseApp.allApps().then((List<mobile.FirebaseApp> list) =>
         list.map((mobile.FirebaseApp app) => FirebaseApp(app)).toList());
-
-dynamic serverTimestamp() =>
-    mobile_fs.FieldValue.serverTimestamp();

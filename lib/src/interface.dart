@@ -19,5 +19,3 @@ Firestore get firestoreInstance => throw Exception('Unsupported Platform');
 /// Returns a list of all extant FirebaseApp instances, or null if there are no FirebaseApp instances.
 Future<List<FirebaseApp>> get apps => throw Exception('Unsupported Platform');
 
-/// Returns a sentinel for use with set() or update() to include a server-generated timestamp in the written data.
-dynamic serverTimestamp() => throw Exception('Unsupported Platform');
