@@ -18,19 +18,28 @@ class DocumentReference implements intf.DocumentReference {
   DocumentReference(this._documentReference);
 
   String get id => _documentReference.documentID;
+
   Stream<DocumentSnapshot> get onSnapshot => _documentReference
       .snapshots()
       .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap));
+
   CollectionReference get parent =>
       CollectionReference(_documentReference.parent());
+
   String get path => _documentReference.path;
 
+  CollectionReference collection(String collectionPath) =>
+      CollectionReference(_documentReference.collection(collectionPath));
+
   Future<void> delete() => _documentReference.delete();
+
   Future<DocumentSnapshot> get() => _documentReference
       .get()
       .then((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap));
+
   Future<void> set(Map<String, dynamic> data) =>
       _documentReference.setData(data);
+
   Future<void> update({Map<String, dynamic> data}) =>
       _documentReference.updateData(data);
 }
