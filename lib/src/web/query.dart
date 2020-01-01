@@ -62,7 +62,7 @@ class Query implements intf.Query {
       arrayContains,
       List arrayContainsAny,
       List whereIn,
-      bool isNull}) {
+      bool isNull = false}) {
     /// https://firebase.google.com/docs/reference/js/firebase.firestore.html#wherefilterop
     String op;
     dynamic value;
