@@ -9,6 +9,7 @@ export 'interfaces/field_value.dart';
 export 'interfaces/firebase_app.dart';
 export 'interfaces/firestore.dart';
 export 'interfaces/query.dart';
+export 'interfaces/write_batch.dart';
 
 /// Returns the default (first initialized) instance of the FirebaseApp.
 FirebaseApp get appInstance => throw Exception('Unsupported Platform');
@@ -18,4 +19,3 @@ Firestore get firestoreInstance => throw Exception('Unsupported Platform');
 
 /// Returns a list of all extant FirebaseApp instances, or null if there are no FirebaseApp instances.
 Future<List<FirebaseApp>> get apps => throw Exception('Unsupported Platform');
-

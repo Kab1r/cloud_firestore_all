@@ -6,38 +6,53 @@ class DocumentSnapshot implements intf.DocumentSnapshot {
   web.DocumentSnapshot documentSnapshot;
   DocumentSnapshot(this.documentSnapshot);
 
+  @override
   DocumentReference get ref => DocumentReference(documentSnapshot.ref);
+
+  @override
   String get id => documentSnapshot.id;
+
+  @override
   Map<String, dynamic> get data => documentSnapshot.data();
 
+  @override
   operator [](String key) => documentSnapshot.get(key);
 }
 
 class DocumentReference implements intf.DocumentReference {
-  web.DocumentReference _documentReference;
-  DocumentReference(this._documentReference);
+  web.DocumentReference documentReference;
+  DocumentReference(this.documentReference);
 
-  String get id => _documentReference.id;
+  @override
+  String get id => documentReference.id;
 
-  Stream<DocumentSnapshot> get onSnapshot => _documentReference.onSnapshot
+  @override
+  Stream<DocumentSnapshot> get onSnapshot => documentReference.onSnapshot
       .map((web.DocumentSnapshot snap) => DocumentSnapshot(snap));
 
+  @override
   CollectionReference get parent =>
-      CollectionReference(_documentReference.parent);
+      CollectionReference(documentReference.parent);
 
-  String get path => _documentReference.path;
+  @override
+  String get path => documentReference.path;
 
+  @override
   CollectionReference collection(String collectionPath) =>
-      CollectionReference(_documentReference.collection(collectionPath));
+      CollectionReference(documentReference.collection(collectionPath));
 
-  Future<void> delete() => _documentReference.delete();
+  @override
+  Future<void> delete() => documentReference.delete();
 
-  Future<DocumentSnapshot> get() => _documentReference
+  @override
+  Future<DocumentSnapshot> get() => documentReference
       .get()
       .then((web.DocumentSnapshot snap) => DocumentSnapshot(snap));
 
-  Future<void> set(Map<String, dynamic> data) => _documentReference.set(data);
+  @override
+  Future<void> set(Map<String, dynamic> data) => documentReference.set(data);
 
+  @override
   Future<void> update({Map<String, dynamic> data}) =>
-      _documentReference.update(data: data);
+      documentReference.update(data: data);
 }
