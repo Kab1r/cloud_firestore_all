@@ -7,7 +7,4 @@ class FirebaseApp implements intf.FirebaseApp {
 
   @override
   String get name => _firebaseApp.name;
-
-  @override
-  FirebaseApp get appInstance => FirebaseApp(web.app());
 }

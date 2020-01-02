@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1+1] - 2020/1/1
+
+- Formating Changes
+- Removed duplicate properties
+
 ## [0.1.1] - 2020/1/1
 
 - Added WriteBatch class
