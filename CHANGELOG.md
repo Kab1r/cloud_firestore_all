@@ -1,3 +1,12 @@
+# Changelog
+
+## [0.1.1] - 2020/1/1
+
+- Added WriteBatch class
+- Added collection method to DocumentReference
+- Added FieldValue methods
+- Moved serverTimestamp to FieldValue class
+- Fixed bug where method parameter did not have default value or null check
 
 ## [0.1.0+3] - 2019/12/17
 
