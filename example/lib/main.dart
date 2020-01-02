@@ -38,6 +38,12 @@ class MessageList extends StatelessWidget {
                 message != null ? message.toString() : '<No message retrieved>',
               ),
               subtitle: Text('Message ${index + 1} of $messageCount'),
+              trailing: Text(
+                DateTime.fromMillisecondsSinceEpoch(
+                  document['created_at']?.millisecondsSinceEpoch ?? 0,
+                  isUtc: true,
+                ).toString(),
+              ),
             );
           },
         );
@@ -52,8 +58,8 @@ class MyHomePage extends StatelessWidget {
 
   Future<void> _addMessage() async {
     await messages.add(<String, dynamic>{
-      'message': 'Hello world!',
-      'created_at': serverTimestamp(),
+      'message': 'Hello World from Cloud_Firestore_All!',
+      'created_at': FieldValue.serverTimestamp(),
     });
   }
 

@@ -38,6 +38,9 @@ abstract class DocumentReference {
   /// Slash-delimited path representing the database location of this query.
   String get path;
 
+  /// Returns the reference of a collection contained inside of this document.
+  CollectionReference collection(String pathcollectionPath);
+
   /// Deletes the document referred to by this [DocumentReference].
   Future<void> delete();
 

@@ -14,23 +14,32 @@ class DocumentSnapshot implements intf.DocumentSnapshot {
 }
 
 class DocumentReference implements intf.DocumentReference {
-  mobile.DocumentReference _documentReference;
-  DocumentReference(this._documentReference);
+  mobile.DocumentReference documentReference;
+  DocumentReference(this.documentReference);
 
-  String get id => _documentReference.documentID;
-  Stream<DocumentSnapshot> get onSnapshot => _documentReference
+  String get id => documentReference.documentID;
+
+  Stream<DocumentSnapshot> get onSnapshot => documentReference
       .snapshots()
       .map((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap));
-  CollectionReference get parent =>
-      CollectionReference(_documentReference.parent());
-  String get path => _documentReference.path;
 
-  Future<void> delete() => _documentReference.delete();
-  Future<DocumentSnapshot> get() => _documentReference
+  CollectionReference get parent =>
+      CollectionReference(documentReference.parent());
+
+  String get path => documentReference.path;
+
+  CollectionReference collection(String collectionPath) =>
+      CollectionReference(documentReference.collection(collectionPath));
+
+  Future<void> delete() => documentReference.delete();
+
+  Future<DocumentSnapshot> get() => documentReference
       .get()
       .then((mobile.DocumentSnapshot snap) => DocumentSnapshot(snap));
+
   Future<void> set(Map<String, dynamic> data) =>
-      _documentReference.setData(data);
+      documentReference.setData(data);
+
   Future<void> update({Map<String, dynamic> data}) =>
-      _documentReference.updateData(data);
+      documentReference.updateData(data);
 }
