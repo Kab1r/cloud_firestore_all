@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.1+4] - 2020/1/3
+
+- Changed License
+
 ## [0.1.1+3] - 2020/1/2
 
 - Fixed incorrect method call

@@ -1,6 +1,6 @@
 name: cloud_firestore_all
 description: A Firebase Firestore wrapper for Flutter that wraps cloud_firestore and firebase into a single API for use on both Flutter web and mobile
-version: 0.1.1+3
+version: 0.1.1+4
 homepage: https://github.com/kabirkwatra/cloud_firestore_all
 
 environment:
