@@ -1,6 +1,10 @@
 # Changelog
 
-## [0.1.1+1] - 2020/1/1
+## [0.1.1+3] - 2020/1/2
+
+- Fixed incorrect method call
+
+## [0.1.1+2] - 2020/1/1
 
 - Formating Changes
 - Removed duplicate properties
