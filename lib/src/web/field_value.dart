@@ -12,5 +12,5 @@ class FieldValue implements intf.FieldValue {
 }
 
 class FieldPath implements intf.FieldPath {
-  static dynamic documentId() => web.FieldPath.documentId;
+  static dynamic documentId() => web.FieldPath.documentId();
 }
