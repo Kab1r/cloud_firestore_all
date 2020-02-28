@@ -15,6 +15,9 @@ abstract class DocumentSnapshot {
   /// Contains all the data of this snapshot
   Map<String, dynamic> get data;
 
+  /// Returns `true` if the document exists.
+  bool get exists => data != null;
+
   /// Reads individual values from the snapshot
   dynamic operator [](String key);
 }

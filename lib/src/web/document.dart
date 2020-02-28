@@ -16,6 +16,9 @@ class DocumentSnapshot implements intf.DocumentSnapshot {
   Map<String, dynamic> get data => documentSnapshot.data();
 
   @override
+  bool get exists => data != null;
+
+  @override
   operator [](String key) => documentSnapshot.get(key);
 }
 
