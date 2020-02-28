@@ -16,6 +16,6 @@ dependencies:
 
   # Web:
   firebase: ^7.1.0
-  
+
   # Interface:
   cloud_firestore_platform_interface: ^1.1.0
