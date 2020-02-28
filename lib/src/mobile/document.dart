@@ -9,6 +9,7 @@ class DocumentSnapshot implements intf.DocumentSnapshot {
   DocumentReference get ref => DocumentReference(_documentSnapshot.reference);
   String get id => _documentSnapshot.documentID;
   Map<String, dynamic> get data => _documentSnapshot.data;
+  bool get exists => data != null;
 
   operator [](String key) => _documentSnapshot[key];
 }
